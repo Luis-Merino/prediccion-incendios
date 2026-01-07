@@ -1,0 +1,53 @@
+{
+  "timestamp": "2026-01-06T11:08:06.391919",
+  "filepath_used": "/content/drive/MyDrive/Piloto-Incendios/samples_el_bierzo_2020_250m.csv",
+  "artifact_dir": "/content/drive/MyDrive/Piloto-Incendios/03-Artefactos",
+  "random_state": 42,
+  "n_rows_used": 76179,
+  "n_features": 10,
+  "feature_names": [
+    "aspecto_deg",
+    "depresion_rocio_verano_c",
+    "elev_m",
+    "nbr_verano",
+    "ndvi_verano",
+    "ndwi_verano",
+    "pendiente_deg",
+    "precip_verano_mm",
+    "tmax_verano_c",
+    "viento10m_verano_max_ms"
+  ],
+  "label_name": "fire_label",
+  "class_counts": {
+    "0": 76144,
+    "1": 35
+  },
+  "pos_rate": 0.00045944420378319484,
+  "imbalance_ratio_neg_over_pos": 2175.542857142857,
+  "desbalance_fuerte": true,
+  "class_weight_lr": "balanced",
+  "class_weight_rf": "balanced",
+  "oversampling_used": true,
+  "oversampling_method": "RandomOverSampler",
+  "train_shape": [
+    60943,
+    10
+  ],
+  "test_shape": [
+    15236,
+    10
+  ],
+  "best_model_name": "LogisticRegression",
+  "best_model_metrics_test_at_threshold_0.5": {
+    "accuracy": 0.8464163822525598,
+    "balanced_accuracy": 0.9231728938209994,
+    "precision": 0.002982530890498509,
+    "recall": 1.0,
+    "f1": 0.00594732370433305,
+    "roc_auc": 0.9456581897319963,
+    "average_precision": 0.05288457756320926
+  },
+  "chosen_threshold": 0.5,
+  "chosen_threshold_reason": "default",
+  "max_geojson_features": 300000
+}

@@ -1,0 +1,28 @@
+RESUMEN EJECUTIVO — Predicción de riesgo de incendio (ML)
+
+- Dataset: samples_el_bierzo_2020_250m.csv
+- Filas usadas: 76,179 | Features: 10
+- Distribución fire_label: 0=76,144 | 1=35 | pos_rate=0.05%
+- Desbalance fuerte: Sí (ratio neg/pos = 2175.54:1)
+- Estrategia desbalance:
+    * class_weight LR: balanced
+    * class_weight RF: balanced
+    * oversampling: Sí (RandomOverSampler)
+
+- Mejor modelo seleccionado: LogisticRegression
+- Métricas (test, umbral=0.5):
+    * accuracy: 0.8464163822525598
+    * balanced_accuracy: 0.9231728938209994
+    * precision: 0.002982530890498509
+    * recall: 1.0
+    * f1: 0.00594732370433305
+    * roc_auc: 0.9456581897319963
+    * average_precision: 0.05288457756320926
+
+Interpretación (muy importante en incendios):
+- Recall alto significa que detectas más incendios reales (menos 'se te escapan').
+- En datasets desbalanceados, PR-AUC (average_precision) suele ser más informativa que ROC-AUC.
+
+Siguiente paso recomendado:
+- Ajustar umbral de decisión según objetivo operativo (priorizar recall vs falsos positivos).
+- Validar en otros años / zonas para comprobar generalización.
